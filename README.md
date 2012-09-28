@@ -1,4 +1,4 @@
-# Mathias’s dotfiles
+# Matt’s dotfiles (from Mathias and Paul Irish)
 
 ## Installation
 
@@ -7,7 +7,7 @@
 You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone https://github.com/jiolasa/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
@@ -27,7 +27,7 @@ Alternatively, to update while avoiding the confirmation prompt:
 To install these dotfiles without Git:
 
 ```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
+cd; curl -#L https://github.com/jiolasa/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
 ```
 
 To update later on, just run that command again.
@@ -46,7 +46,7 @@ export PATH="$HOME/utils:$PATH"
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My `~/.extra` looks something like this:
+Mathias' `~/.extra` looks something like this:
 
 ```bash
 # PATH additions
@@ -62,7 +62,7 @@ GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork_select) instead, though.
+You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork Mathias' repository](https://github.com/mathiasbynens/dotfiles/fork_select) instead, though.
 
 ### Sensible OS X defaults
 
