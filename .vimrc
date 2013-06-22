@@ -95,4 +95,5 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
+set background=dark
 colorscheme solarized
