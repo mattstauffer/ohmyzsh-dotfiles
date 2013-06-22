@@ -97,3 +97,30 @@ endif
 
 set background=dark
 colorscheme solarized
+
+" Vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" My bundles
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+
+" Ctrl-P key mapping
+let g:ctrlp_map = '<c-p>'
+
+filetype plugin indent on
+
+" From https://github.com/joelhooks/dotfiles/blob/master/.vim/vimrc
+" Statusline
+" https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
+set statusline=                                     " Override default
+" set statusline+=%1*%{fugitive#statusline()[4:-2]}%* " Show fugitive git info
+set statusline+=%2*\ %f\ %m\ %r%*                   " Show filename/path
+set statusline+=%3*%=%*                             " Set right-side status info after this line
+set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
+set statusline+=%5*\ %*                             " Set ending space
