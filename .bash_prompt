@@ -19,7 +19,7 @@ if tput setaf 1 &> /dev/null; then
 		ORANGE=$(tput setaf 172)
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 256)
+		WHITE=$(tput setaf 0)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
@@ -48,7 +48,7 @@ export BOLD
 export RESET
 
 function parse_git_dirty() {
-	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
 }
 
 function parse_git_branch() {

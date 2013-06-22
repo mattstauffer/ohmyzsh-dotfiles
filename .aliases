@@ -44,10 +44,13 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias sudo='sudo '
 
 # Gzip-enabled `curl`
-alias gurl="curl --compressed"
+alias gurl='curl --compressed'
+
+# Get week number
+alias week='date +%V'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -90,8 +93,8 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
@@ -115,6 +118,11 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
+
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
