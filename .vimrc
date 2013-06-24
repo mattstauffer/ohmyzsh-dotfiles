@@ -33,11 +33,11 @@ set modelines=4
 set exrc
 set secure
 " Enable line numbers
-" set number
+set number
 " Enable syntax highlighting
 syntax on
 " Highlight current line
-" set cursorline
+set cursorline
 " Make tabs as wide as four spaces
 set tabstop=4
 " Show “invisible” characters
@@ -50,7 +50,7 @@ set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
 " Always show status line
-" set laststatus=2
+set laststatus=2
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
@@ -109,18 +109,25 @@ Bundle 'gmarik/vundle'
 " My bundles
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline'
 
 " Ctrl-P key mapping
 let g:ctrlp_map = '<c-p>'
 
 filetype plugin indent on
 
+" Commented out to try powerline
 " From https://github.com/joelhooks/dotfiles/blob/master/.vim/vimrc
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
-set statusline=                                     " Override default
+" set statusline=                                     " Override default
 " set statusline+=%1*%{fugitive#statusline()[4:-2]}%* " Show fugitive git info
-set statusline+=%2*\ %f\ %m\ %r%*                   " Show filename/path
-set statusline+=%3*%=%*                             " Set right-side status info after this line
-set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
-set statusline+=%5*\ %*                             " Set ending space
+" set statusline+=%2*\ %f\ %m\ %r%*                   " Show filename/path
+" set statusline+=%3*%=%*                             " Set right-side status info after this line
+" set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
+" set statusline+=%5*\ %*                             " Set ending space
+
+" Run powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
