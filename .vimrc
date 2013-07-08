@@ -109,14 +109,14 @@ Bundle 'gmarik/vundle'
 " My bundles
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/powerline'
+Bundle 'bling/vim-airline'
 
 " Ctrl-P key mapping
 let g:ctrlp_map = '<c-p>'
 
 filetype plugin indent on
 
-" Commented out to try powerline
+" Commented out to try airline
 " From https://github.com/joelhooks/dotfiles/blob/master/.vim/vimrc
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
@@ -127,7 +127,5 @@ filetype plugin indent on
 " set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
 " set statusline+=%5*\ %*                             " Set ending space
 
-" Run powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" enable powerline symbols for airline
+" let g:airline_powerline_fonts=1
