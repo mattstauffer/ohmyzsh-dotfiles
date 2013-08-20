@@ -98,25 +98,30 @@ endif
 set background=dark
 colorscheme solarized
 
-" Vundle
-filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Vundle -- commented out to allow non-Vundle users to use Vim without errors
+" " Vundle
+" filetype off
 
-Bundle 'gmarik/vundle'
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
 
-" My bundles
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'bling/vim-airline'
+" Bundle 'gmarik/vundle'
 
-" Ctrl-P key mapping
-let g:ctrlp_map = '<c-p>'
+" " My bundles
+" Bundle 'kien/ctrlp.vim'
+" " -- or --
+" Bundle 'twe4ked/vim-peepopen'
+" 
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'bling/vim-airline'
 
-filetype plugin indent on
+" " Ctrl-P key mapping
+" let g:ctrlp_map = '<c-p>'
 
-" Commented out to try airline
+" filetype plugin indent on
+
+" Old statusline customization
 " From https://github.com/joelhooks/dotfiles/blob/master/.vim/vimrc
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
@@ -127,5 +132,5 @@ filetype plugin indent on
 " set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
 " set statusline+=%5*\ %*                             " Set ending space
 
-" enable powerline symbols for airline
+" " enable powerline symbols for airline
 " let g:airline_powerline_fonts=1
