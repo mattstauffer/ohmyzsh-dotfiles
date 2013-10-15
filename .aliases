@@ -19,6 +19,14 @@ alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+alias sb='source ~/.bash_profile; echo "Reloaded .bash_profile."' 
+
+# Git add and commit in one
+alias gac="git add .; git commit -am"
+
+# Copy ssh key to clipboard
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -128,12 +136,6 @@ alias map="xargs -n1"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
-
-# Git add and commit in one
-alias gac="git add .; git commit -am"
-
-# Copy ssh key to clipboard
-alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"

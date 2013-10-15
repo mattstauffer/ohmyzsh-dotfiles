@@ -41,6 +41,11 @@ which grunt &> /dev/null && eval "$(grunt --completion=bash)"
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
+# Autocomplete git commands
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # Add autocompletion for jump
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html?utm_source=hackernewsletter&utm_medium=email
 _completemarks() {
