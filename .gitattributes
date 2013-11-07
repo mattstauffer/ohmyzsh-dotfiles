@@ -1,3 +1,0 @@
-# Automatically normalize line endings for all text-based files
-# Dropped because of weird CRLF issues (e.g. http://forums.laravel.io/viewtopic.php?pid=44846#p44846)
-# * text=auto

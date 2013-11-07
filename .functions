@@ -1,3 +1,5 @@
+# These are not currently being imported to ZSH. But they probably should be...
+ 
 # Simple calculator
 function calc() {
 	local result=""
