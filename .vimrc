@@ -77,6 +77,70 @@ endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Easy switch between splits with Ctrl-h, j, k, l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Increase width of current vertical split
+nmap <C-v> :vertical resize +5<cr>
+
+" Toggle NERDTree
+nmap <C-b> :NERDTreeToggle<cr>
+
+" Jeffrey Way Laravel tips: @todo Learn and use!
+" Laravel abbrevs
+abbrev gm !php artisan generate:model
+abbrev gc !php artisan generate:controller
+abbrev gmig !php artisan generate:migration
+
+" Laravel framework common files
+nmap <leader>lr :e app/routes.php<cr>
+nmap <leader>lca :e app/config/app.php<cr>
+nmap <leader>lcd :e app/config/database.php<cr>
+nmap <leader>lc :e composer.json
+
+set wildignore+=*/vendor/**
+set wildignore+=*/node_modules/**
+
+" Create/edit file in the current directory
+nmap :ed :edit %:p:h/
+
+"" PHP
+" Easily create class. @todo: Make this actually work!
+function! Class()
+	let name = input('Class Name? ')
+	let namespace = input('Any Namespace? ')
+
+	if strlen(namespace)
+		exec 'normal i<?php namespace ' . namespace . ';'
+	else
+		exec 'normal i<?php'
+	endif
+
+	" Open class
+	exec 'normal iclass ' . name . ' {}O'
+
+	exec 'normal i	public function __construct()	{			}kkA'
+endfunction
+nmap <leader>1 :call Class()<cr>
+
+" Add a new dependency to a PHP class
+function! AddDependency()
+	let dependency = input('Var Name: ')
+	let namespace = input('Class Path: ')
+
+	let segments = split(namespace, '\')
+	let typehint = segments[-1]
+
+	exec 'normal gg/construct%i, ' . typehint . ' $' . dependency . '/}O$this->a' . dependency . ' = $' . dependency . ';==o?{kO	protected $' . dependency . ';?{Ouse ' . namespace . ';'
+	
+	" Remove opening comma if there is only one dependency
+	exec 'normal :%s/(, /(/g'
+endfunction
+nmap <leader>2 :call AddDependency()<cr>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -101,7 +165,6 @@ set background=dark
 colorscheme solarized
 
 
-" Vundle -- commented out to allow non-Vundle users to use Vim without errors
 " " Vundle
 " filetype off
 
@@ -109,30 +172,21 @@ colorscheme solarized
 " call vundle#rc()
 
 " Bundle 'gmarik/vundle'
-
+" 
 " " My bundles
 " Bundle 'kien/ctrlp.vim'
-" " -- or --
-" Bundle 'twe4ked/vim-peepopen'
-" 
+" " " -- or --
+" " Bundle 'twe4ked/vim-peepopen'
+" " 
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'bling/vim-airline'
-
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'scrooloose/nerdtree'
+" 
 " " Ctrl-P key mapping
 " let g:ctrlp_map = '<c-p>'
-
+" 
 " filetype plugin indent on
-
-" Old statusline customization
-" From https://github.com/joelhooks/dotfiles/blob/master/.vim/vimrc
-" Statusline
-" https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
-" set statusline=                                     " Override default
-" set statusline+=%1*%{fugitive#statusline()[4:-2]}%* " Show fugitive git info
-" set statusline+=%2*\ %f\ %m\ %r%*                   " Show filename/path
-" set statusline+=%3*%=%*                             " Set right-side status info after this line
-" set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
-" set statusline+=%5*\ %*                             " Set ending space
 
 " " enable powerline symbols for airline
 " let g:airline_powerline_fonts=1
