@@ -1,0 +1,45 @@
+update
+upgrade
+install coreutils
+install wget --enable-iri
+tap homebrew/dupes
+install homebrew/dupes/grep
+install ack
+install git
+install tree
+
+tap josegonzalez/homebrew-php
+
+install openssl
+install php54-mcrypt
+install josegonzalez/php/composer
+install wget
+install optipng
+install redis
+install mysql
+install phpunit
+install postgresql
+
+install caskroom/cask/brew-cask
+
+cask install alfred
+cask install caffeine
+cask install flux
+
+cask install virtualbox
+cask install vagrant
+
+cask install google-chrome
+cask install iterm2
+cask install phpstorm
+cask install sequel-pro
+
+cask install adium
+cask install nvalt
+cask install rdio
+cask install slack
+cask install textexpander
+cask install vlc
+cask install the-unarchiver
+
+cleanup

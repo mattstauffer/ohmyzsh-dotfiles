@@ -1,4 +1,4 @@
-# Matt’s dotfiles (from Mathias and Paul Irish)
+# Matt’s dotfiles (from Mathias and Paul Irish) adapted for ZSH
 
 ## Installation
 
@@ -22,21 +22,12 @@ cd; curl -#L https://github.com/mattstauffer/ohmyzsh-dotfiles/tarball/master | t
 
 To update later on, just run that command again.
 
-
-### Sensible OS X defaults
-
-When setting up a new Mac, you may want to set some sensible OS X defaults:
-
-```bash
-./.osx
-```
-
 ### Install Homebrew formulae
 
 When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
 
 ```bash
-./.brew
+brew bundle .brewfile
 ```
 
 ## Original (Bash dotfiles) Author
