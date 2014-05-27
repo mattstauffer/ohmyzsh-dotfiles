@@ -13,7 +13,6 @@ tap josegonzalez/homebrew-php
 install openssl
 install php54-mcrypt
 install josegonzalez/php/composer
-install wget
 install optipng
 install redis
 install mysql
