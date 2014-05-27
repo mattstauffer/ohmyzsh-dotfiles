@@ -1,0 +1,9 @@
+# --- PATH ------------------------------------
+# Customize to your needs...
+export PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin # all bins
+# The following exports are useful *if* you use the apps:
+# export PATH=$PATH:$HOME/.rvm/bin # Add RVM bin
+# export PATH=$PATH:/usr/local/opt/php54/bin # Add PHP54
+# export PATH=$PATH:/Applications/MAMP/Library/bin #MAMP
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# export PATH="/usr/local/heroku/bin:$PATH" # Heroku Toolbelt

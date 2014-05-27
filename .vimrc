@@ -114,15 +114,25 @@ function! Class()
 	let namespace = input('Any Namespace? ')
 
 	if strlen(namespace)
-		exec 'normal i<?php namespace ' . namespace . ';'
+		exec 'normal i<?php namespace ' . namespace . ';
+
+'
 	else
-		exec 'normal i<?php'
+		exec 'normal i<?php
+
+'
 	endif
 
 	" Open class
-	exec 'normal iclass ' . name . ' {}O'
+	exec 'normal iclass ' . name . ' {
+}O'
 
-	exec 'normal i	public function __construct()	{			}kkA'
+	exec 'normal i
+	public function __construct()
+	{
+
+	}
+kkA'
 endfunction
 nmap <leader>1 :call Class()<cr>
 
@@ -134,10 +144,17 @@ function! AddDependency()
 	let segments = split(namespace, '\')
 	let typehint = segments[-1]
 
-	exec 'normal gg/construct%i, ' . typehint . ' $' . dependency . '/}O$this->a' . dependency . ' = $' . dependency . ';==o?{kO	protected $' . dependency . ';?{Ouse ' . namespace . ';'
+	exec 'normal gg/construct
+%i, ' . typehint . ' $' . dependency . '/}
+O$this->a' . dependency . ' = $' . dependency . ';==o?{
+kO	protected $' . dependency . ';
+?{
+Ouse ' . namespace . ';
+'
 	
 	" Remove opening comma if there is only one dependency
-	exec 'normal :%s/(, /(/g'
+	exec 'normal :%s/(, /(/g
+'
 endfunction
 nmap <leader>2 :call AddDependency()<cr>
 
@@ -165,6 +182,7 @@ set background=dark
 colorscheme solarized
 
 
+" Uncomment all of the following lines to use Vundle with some default bundles
 " " Vundle
 " filetype off
 
